@@ -146,7 +146,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-slate-900/95 bg-gradient-to-br from-gray-900 via-slate-800 to-black">
+    <div className="bg-gray-950 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-950">
       {/* Navigation Component */}
       {/* <Navigation sections={sections} /> */}
       
@@ -160,12 +160,12 @@ export default function Home() {
         {/* Hero Section - Clipped from Bottom */}
         <section 
           ref={heroRef}
-          className="snap-section h-[85vh] md:h-[85vh] h-screen relative bg-gradient-to-r from-gray-900 via-slate-800 to-black text-white overflow-hidden pt-0"
+          className="snap-section h-[85vh] md:h-[85vh] h-screen relative bg-gradient-to-r from-gray-950 via-slate-900 to-gray-950 text-white overflow-hidden pt-0"
         >
           {/* Background Image */}
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/gallery15.jpg)' }}></div>
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/gallery34.jpeg)' }}></div>
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-slate-900/60 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-950/80 via-slate-900/70 to-gray-950/80"></div>
           <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
           
           <motion.div 
@@ -176,10 +176,10 @@ export default function Home() {
               <motion.h1 
                 {...variants.slideUp}
                 transition={{ ...variants.slideUp.transition, delay: isMobile ? 0 : 0.2 }}
-                className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-slate-300 to-white bg-clip-text text-transparent"
+                className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-slate-200 to-gray-100 bg-clip-text text-transparent"
               >
-              
-                <span className="block text-red-400 text-4xl md:text-6xl mt-4">Reliable Trucking Company</span>
+                AMEX TRANSPORTS
+                <span className="block text-red-500 text-4xl md:text-6xl mt-4 font-semibold">Reliable Trucking Company</span>
               </motion.h1>
               <motion.p 
                 {...variants.slideUp}
@@ -202,7 +202,7 @@ export default function Home() {
               >
                 <motion.button 
                   {...variants.buttonScale}
-                  className="bg-gradient-to-r from-blue-600 to-slate-700 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 border border-blue-400/30" 
+                  className="bg-gradient-to-r from-blue-700 to-slate-700 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 border border-blue-500/40 hover:from-blue-600 hover:to-slate-600" 
                   onClick={() => {
                     document.getElementById('get-in-touch')?.scrollIntoView({ behavior: 'smooth' });
                   }}
@@ -212,7 +212,7 @@ export default function Home() {
                 <Link href="/gallery">
                   <motion.button 
                     {...variants.buttonScale}
-                    className="border-2 border-blue-400/50 text-blue-400 px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-400/10 backdrop-blur-sm transition-all duration-300" 
+                    className="border-2 border-slate-400/60 text-slate-200 px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-700/20 backdrop-blur-sm transition-all duration-300 hover:border-slate-300/80" 
                   >
                     View Fleet
                   </motion.button>
@@ -226,30 +226,30 @@ export default function Home() {
             transition={{ ...variants.fadeIn.transition, delay: isMobile ? 0 : 1.5 }}
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           >
-            <div className="flex flex-col items-center text-blue-400">
+            <div className="flex flex-col items-center text-slate-300">
               <span className="text-sm font-medium mb-2">Scroll to explore</span>
               <motion.div
                 animate={isMobile ? {} : { y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center"
+                className="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center"
               >
                 <motion.div
                   animate={isMobile ? {} : { y: [0, 12, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="w-1 h-3 bg-blue-400 rounded-full mt-2"
+                  className="w-1 h-3 bg-slate-400 rounded-full mt-2"
                 />
               </motion.div>
             </div>
           </motion.div>
           
           {/* Truck silhouette overlay */}
-          <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-gray-900 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-gray-950 to-transparent"></div>
         </section>
 
         {/* Services Section - Compact */}
         <section 
           ref={servicesRef}
-          className="snap-section min-h-screen md:h-screen bg-gradient-to-br from-slate-800 via-gray-900 to-black flex items-center justify-center p-0"
+          className="snap-section min-h-screen md:h-screen bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900 flex items-center justify-center p-0"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <motion.div 
@@ -258,7 +258,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-600 to-slate-200 bg-clip-text text-transparent">
                 Our Services
               </h2>
               <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
@@ -274,7 +274,7 @@ export default function Home() {
                   transition={{ duration: isMobile ? 0.2 : 0.8, delay: isMobile ? 0 : index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={isMobile ? {} : { y: -8 }}
-                  className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 border border-slate-600/30 hover:border-blue-500/50"
+                  className="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-2xl hover:shadow-blue-600/20 transition-all duration-300 border border-gray-600/40 hover:border-blue-500/50 hover:bg-gray-700/50"
                 >
                   <div className="text-4xl mb-3">{service.icon}</div>
                   <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
@@ -282,7 +282,7 @@ export default function Home() {
                   <ul className="space-y-1 text-xs text-gray-300">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center justify-center">
-                        <svg className="w-3 h-3 text-blue-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-3 h-3 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         {feature}
@@ -298,7 +298,7 @@ export default function Home() {
         {/* Gallery Section */}
         <section 
           ref={galleryRef}
-          className="snap-section min-content bg-gradient-to-b from-slate-800 to-gray-900 py-6"
+          className="snap-section min-content bg-gradient-to-b from-gray-800 to-slate-900 py-6"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <motion.div 
@@ -308,7 +308,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-blue-600 to-slate-200 bg-clip-text text-transparent">
                 Recent Projects
               </h2>
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
@@ -324,7 +324,7 @@ export default function Home() {
                   transition={{ duration: isMobile ? 0.2 : 0.8, delay: isMobile ? 0 : index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={isMobile ? {} : { y: -10 }}
-                  className="bg-slate-800/30 backdrop-blur-sm rounded-2xl shadow-2xl shadow-blue-500/25 overflow-hidden hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 border border-slate-600/30 hover:border-blue-500/50"
+                  className="bg-gray-800/40 backdrop-blur-sm rounded-2xl shadow-2xl shadow-blue-600/20 overflow-hidden hover:shadow-2xl hover:shadow-blue-600/30 transition-all duration-300 border border-gray-600/40 hover:border-blue-500/50 hover:bg-gray-700/50"
                 >
                   <div className="h-48 relative overflow-hidden">
                     <NextImage
@@ -333,9 +333,9 @@ export default function Home() {
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-900/30 to-transparent"></div>
                     <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-black/60 backdrop-blur-sm text-blue-400 text-xs font-medium rounded-full border border-blue-500/40">
+                      <span className="px-3 py-1 bg-gray-900/80 backdrop-blur-sm text-blue-400 text-xs font-medium rounded-full border border-blue-500/50">
                         {project.category}
                       </span>
                     </div>
@@ -354,26 +354,26 @@ export default function Home() {
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: isMobile ? 0.1 : 0.3 }}
-                          className="border-t border-slate-600/50 pt-4 mt-4 overflow-hidden"
+                          className="border-t border-gray-600/50 pt-4 mt-4 overflow-hidden"
                         >
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                             <div>
                               <h4 className="font-semibold text-white mb-2">Project Details</h4>
                               <div className="space-y-2 text-sm">
                                 <div>
-                                  <span className="font-medium text-blue-400">Location:</span>
+                                  <span className="font-medium text-red-500">Location:</span>
                                   <p className="text-gray-300">{project.details.location}</p>
                                 </div>
                                 <div>
-                                  <span className="font-medium text-blue-400">Equipment:</span>
+                                  <span className="font-medium text-red-500">Equipment:</span>
                                   <p className="text-gray-300">{project.details.equipment}</p>
                                 </div>
                                 <div>
-                                  <span className="font-medium text-blue-400">Weight:</span>
+                                  <span className="font-medium text-red-500">Weight:</span>
                                   <p className="text-gray-300">{project.details.weight}</p>
                                 </div>
                                 <div>
-                                  <span className="font-medium text-blue-400">Timeline:</span>
+                                  <span className="font-medium text-red-500">Timeline:</span>
                                   <p className="text-gray-300">{project.details.timeline}</p>
                                 </div>
                               </div>
@@ -387,7 +387,7 @@ export default function Home() {
                             <motion.button 
                               whileHover={isMobile ? {} : { scale: 1.05 }}
                               whileTap={isMobile ? {} : { scale: 0.95 }}
-                              className="w-full bg-gradient-to-r from-blue-600 to-slate-700 text-white py-2 px-4 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 border border-blue-400/30" 
+                              className="w-full bg-gradient-to-r from-blue-700 to-slate-700 text-white py-2 px-4 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 border border-blue-500/40 hover:from-blue-600 hover:to-slate-600" 
                             > 
                               Get Quote for Similar Project
                             </motion.button>
@@ -402,7 +402,7 @@ export default function Home() {
                       onClick={() => {
                         setExpandedProject(expandedProject === project.id ? null : project.id);
                       }}
-                      className="w-full bg-gradient-to-r from-blue-600 to-slate-700 text-white py-2 px-4 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 border border-blue-400/30"
+                      className="w-full bg-gradient-to-r from-blue-700 to-slate-700 text-white py-2 px-4 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 border border-blue-500/40 hover:from-blue-600 hover:to-slate-600"
                     >
                       {expandedProject === project.id ? 'Hide Details' : 'View Details'}
                     </motion.button>

@@ -20,14 +20,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-slate-600/30 shadow-2xl shadow-blue-500/25 sticky py-0 pt-2 rounded-b-xl">
+    <header className="top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-gray-600/40 shadow-2xl shadow-gray-500/20 sticky py-0 pt-2 rounded-b-xl bg-white/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center h-full">
             <Link href="/" className="flex items-center h-full">
               <Image
-                src="/white_FullLogo7Lines.png"
+                src="/white_FullLogoamex.png"
                 alt="Seven Lines Logo"
                 width={120}
                 height={40}
@@ -43,10 +43,10 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-blue-400 px-4 py-3 text-lg font-semibold transition-all duration-200 relative group"
+                className="text-gray-700 hover:text-gray-900 px-4 py-3 text-lg font-semibold transition-all duration-200 relative group"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-slate-300 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-600 to-gray-800 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </nav>
@@ -57,7 +57,7 @@ export default function Header() {
               whileHover={isMobile ? {} : { scale: 1.05 }}
               whileTap={isMobile ? {} : { scale: 0.95 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-blue-400 focus:outline-none focus:text-blue-400 transition-colors duration-200"
+              className="text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               <svg
@@ -96,7 +96,7 @@ export default function Header() {
               transition={{ duration: isMobile ? 0.1 : 0.3 }}
               className="md:hidden overflow-hidden"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800/95 backdrop-blur-md border-t border-slate-600/30">
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-100/95 backdrop-blur-md border-t border-gray-300/50">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.name}
@@ -106,7 +106,7 @@ export default function Header() {
                   >
                     <Link
                       href={item.href}
-                      className="text-gray-300 hover:text-blue-400 block px-4 py-3 text-lg font-bold transition-all duration-200 hover:bg-slate-700/50 rounded-lg"
+                      className="text-gray-700 hover:text-gray-900 block px-4 py-3 text-lg font-bold transition-all duration-200 hover:bg-gray-200/70 rounded-lg"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
