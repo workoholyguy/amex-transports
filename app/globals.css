@@ -157,7 +157,7 @@ html {
 
 /* Gradient text animation */
 .gradient-text {
-  background: linear-gradient(45deg, #60a5fa, #cbd5e1, #60a5fa);
+  background: linear-gradient(45deg, #6b7280, #cbd5e1, #6b7280);
   background-size: 200% 200%;
   animation: gradientShift 3s ease infinite;
   -webkit-background-clip: text;
@@ -199,6 +199,14 @@ html {
 .focus-ring:focus {
   outline: none;
   ring: 2px;
-  ring-color: #60a5fa;
+  ring-color: #6b7280;
   ring-offset: 2px;
+}
+
+/* Hero background image */
+.hero-bg-image {
+  background-image: url("/gallery34.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "Seven Lines Trucking - RGN Superload Transport",
+  title: "Amex Transports - RGN Superload Transport",
   description: "Professional heavy haul and RGN superload transportation services nationwide. Based in Dayton, Ohio.",
 };
 

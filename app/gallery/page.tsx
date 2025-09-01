@@ -306,8 +306,8 @@ export default function Gallery() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-blue-400 text-lg font-medium">Loading Gallery...</p>
+          <div className="w-16 h-16 border-4 border-gray-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-400 text-lg font-medium">Loading Gallery...</p>
         </motion.div>
       </div>
     );
@@ -340,7 +340,7 @@ export default function Gallery() {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-slate-300 to-white bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-gray-400 via-slate-300 to-white bg-clip-text text-transparent"
           >
             Our Fleet & Projects
           </motion.h1>
@@ -350,7 +350,7 @@ export default function Gallery() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl md:text-3xl text-gray-200 mb-8 font-light"
           >
-            Showcasing Our Fleet & Excellence in Heavy Haul Transportation
+            CAPABLE. Showcasing Our Fleet & Excellence in Heavy Haul & Specialized Load Transportation
           </motion.p>
           <motion.div 
             initial={{ y: 30, opacity: 0 }}
@@ -359,11 +359,11 @@ export default function Gallery() {
             className="flex flex-wrap justify-center gap-6 text-gray-300"
           >
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+              <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
               Nationwide Coverage
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+              <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
               RGN Superloads
             </span>
             <span className="flex items-center gap-2">
@@ -379,11 +379,11 @@ export default function Gallery() {
           transition={{ duration: 1, delay: 0.8 }}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
-          <div className="w-6 h-10 border-2 border-blue-500 rounded-full flex justify-center">
+          <div className="w-6 h-10 border-2 border-gray-500 rounded-full flex justify-center">
             <motion.div 
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-3 bg-blue-500 rounded-full mt-2"
+              className="w-1 h-3 bg-gray-500 rounded-full mt-2"
             ></motion.div>
           </div>
         </motion.div>
@@ -403,7 +403,7 @@ export default function Gallery() {
               Explore Our Projects
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Filter through our diverse portfolio of heavy haul transportation projects
+              Filter through our diverse portfolio of heavy haul and specialized load transportation projects
             </p>
           </motion.div>
 
@@ -422,7 +422,7 @@ export default function Gallery() {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
                   activeFilter === filter.id
-                    ? 'bg-gradient-to-r from-blue-600 to-slate-700 text-white shadow-2xl shadow-blue-500/25 border border-blue-400/30'
+                    ? 'bg-gradient-to-r from-gray-600 to-slate-700 text-white shadow-2xl shadow-gray-500/25 border border-gray-400/30'
                     : 'bg-slate-700/30 text-gray-300 hover:bg-slate-600/40 backdrop-blur-sm border border-slate-600/50'
                 }`}
               >
@@ -454,12 +454,12 @@ export default function Gallery() {
                     y: -10,
                     transition: { duration: 0.3 }
                   }}
-                  className="group relative bg-slate-800/30 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-600/30 hover:border-blue-500/50 transition-all duration-500"
+                  className="group relative bg-slate-800/30 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-600/30 hover:border-gray-500/50 transition-all duration-500"
                 >
                   {/* Project Image */}
                   <div className="relative h-64 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-700/40 to-gray-800/40"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-slate-800/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-slate-800/20"></div>
                     <Image 
                       src={project.image}
                       alt={project.title}
@@ -470,21 +470,21 @@ export default function Gallery() {
                     
                     {/* Animated Background Pattern */}
                     <div className="absolute inset-0 opacity-10">
-                      <div className="absolute top-4 right-4 w-20 h-20 border-2 border-blue-500/30 rounded-full"></div>
-                      <div className="absolute bottom-8 left-8 w-12 h-12 border border-red-500/20 rounded-full"></div>
+                      <div className="absolute top-4 right-4 w-20 h-20 border-2 border-gray-500/30 rounded-full"></div>
+                      <div className="absolute bottom-8 left-8 w-12 h-12 border border-gray-500/20 rounded-full"></div>
                       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-slate-400/10 rounded-full"></div>
                     </div>
 
                     {/* Project Number */}
                     <div className="absolute top-4 left-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-slate-700 rounded-xl flex items-center justify-center text-white font-bold text-base border border-blue-400/30">
+                      <div className="w-10 h-10 bg-gradient-to-r from-gray-600 to-slate-700 rounded-xl flex items-center justify-center text-white font-bold text-base border border-gray-400/30">
                         {project.id}
                       </div>
                     </div>
 
                     {/* Category Badge */}
                     <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-black/60 backdrop-blur-sm text-blue-400 text-xs font-medium rounded-full border border-blue-500/40">
+                      <span className="px-3 py-1 bg-black/60 backdrop-blur-sm text-gray-400 text-xs font-medium rounded-full border border-gray-500/40">
                         {project.category}
                       </span>
                     </div>
@@ -496,7 +496,7 @@ export default function Gallery() {
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           onClick={() => handleViewDetails(project)}
-                          className="w-full bg-gradient-to-r from-blue-600 to-slate-700 text-white py-2 px-4 rounded-xl font-bold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 border border-blue-400/30 text-sm"
+                          className="w-full bg-gradient-to-r from-gray-600 to-slate-700 text-white py-2 px-4 rounded-xl font-bold hover:shadow-lg hover:shadow-gray-500/25 transition-all duration-300 border border-gray-400/30 text-sm"
                         >
                           View Details
                         </motion.button>
@@ -506,7 +506,7 @@ export default function Gallery() {
 
                   {/* Project Info */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gray-400 transition-colors duration-300">
                       {project.title}
                     </h3>
                     <p className="text-gray-300 mb-4 leading-relaxed text-sm">
@@ -516,11 +516,11 @@ export default function Gallery() {
                     {/* Project Stats */}
                     <div className="grid grid-cols-2 gap-3 mb-4">
                       <div className="text-center p-3 bg-slate-700/30 rounded-xl border border-slate-600/50">
-                        <div className="text-blue-400 font-bold text-base">{project.weight}</div>
+                        <div className="text-gray-400 font-bold text-base">{project.weight}</div>
                         <div className="text-gray-400 text-xs">Weight</div>
                       </div>
                       <div className="text-center p-3 bg-slate-700/30 rounded-xl border border-slate-600/50">
-                        <div className="text-red-400 font-bold text-base">{project.distance}</div>
+                        <div className="text-gray-400 font-bold text-base">{project.distance}</div>
                         <div className="text-gray-400 text-xs">Distance</div>
                       </div>
                     </div>
@@ -569,10 +569,10 @@ export default function Gallery() {
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 border border-blue-400/30">
+                <div className="w-20 h-20 bg-gradient-to-r from-gray-600 to-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 border border-gray-400/30">
                   <span className="text-2xl">{stat.icon}</span>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-3 group-hover:text-gray-400 transition-colors duration-300">
                   {stat.number}
                 </div>
                 <div className="text-lg text-gray-300">{stat.label}</div>
@@ -595,7 +595,7 @@ export default function Gallery() {
               Ready to Get Started?
             </h2>
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Let&apos;s discuss your transportation needs and see how we can handle your heavy haul requirements with the same level of expertise and care.
+              Let&apos;s discuss your heavy haul and specialized transportation needs and see how we can handle your unique shipment requirements with the same level of expertise, care, and customized transportation plans.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -603,7 +603,7 @@ export default function Gallery() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToContact}
-                className="bg-gradient-to-r from-blue-600 to-slate-700 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 border border-blue-400/30"
+                className="bg-gradient-to-r from-gray-600 to-slate-700 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-gray-500/25 transition-all duration-300 border border-gray-400/30"
               >
                 Get Free Quote
               </motion.button>
@@ -611,7 +611,7 @@ export default function Gallery() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToContact}
-                className="border-2 border-red-500 text-red-400 px-10 py-4 rounded-xl font-bold text-lg hover:bg-red-500 hover:text-white transition-all duration-300"
+                className="border-2 border-gray-500 text-gray-400 px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-500 hover:text-white transition-all duration-300"
               >
                 Contact Dispatch
               </motion.button>
@@ -663,14 +663,14 @@ export default function Gallery() {
                   
                   {/* Project Number */}
                   <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-slate-700 rounded-xl flex items-center justify-center text-white font-bold text-lg border border-blue-400/30">
+                    <div className="w-12 h-12 bg-gradient-to-r from-gray-600 to-slate-700 rounded-xl flex items-center justify-center text-white font-bold text-lg border border-gray-400/30">
                       {selectedProject.id}
                     </div>
                   </div>
 
                   {/* Category Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className="px-4 py-2 bg-black/60 backdrop-blur-sm text-blue-400 text-sm font-medium rounded-full border border-blue-500/40">
+                    <span className="px-4 py-2 bg-black/60 backdrop-blur-sm text-gray-400 text-sm font-medium rounded-full border border-gray-500/40">
                       {selectedProject.category}
                     </span>
                   </div>
@@ -689,11 +689,11 @@ export default function Gallery() {
                   {/* Project Stats */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="text-center p-4 bg-slate-700/30 rounded-xl border border-slate-600/50">
-                      <div className="text-blue-400 font-bold text-lg">{selectedProject.weight}</div>
+                      <div className="text-gray-400 font-bold text-lg">{selectedProject.weight}</div>
                       <div className="text-gray-400 text-sm">Weight</div>
                     </div>
                     <div className="text-center p-4 bg-slate-700/30 rounded-xl border border-slate-600/50">
-                      <div className="text-red-400 font-bold text-lg">{selectedProject.distance}</div>
+                      <div className="text-gray-400 font-bold text-lg">{selectedProject.distance}</div>
                       <div className="text-gray-400 text-sm">Distance</div>
                     </div>
                   </div>
@@ -715,7 +715,7 @@ export default function Gallery() {
                         closeModal();
                         scrollToContact();
                       }}
-                      className="w-full bg-gradient-to-r from-blue-600 to-slate-700 text-white py-3 px-6 rounded-xl font-bold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 border border-blue-400/30"
+                      className="w-full bg-gradient-to-r from-gray-600 to-slate-700 text-white py-3 px-6 rounded-xl font-bold hover:shadow-lg hover:shadow-gray-500/25 transition-all duration-300 border border-gray-400/30"
                     >
                       Get Quote for This Project
                     </motion.button>
@@ -726,7 +726,7 @@ export default function Gallery() {
                         closeModal();
                         scrollToContact();
                       }}
-                      className="w-full border-2 border-red-500 text-red-400 py-3 px-6 rounded-xl font-bold hover:bg-red-500 hover:text-white transition-all duration-300"
+                      className="w-full border-2 border-gray-500 text-gray-400 py-3 px-6 rounded-xl font-bold hover:bg-gray-500 hover:text-white transition-all duration-300"
                     >
                       Contact Dispatch
                     </motion.button>
@@ -752,7 +752,7 @@ export default function Gallery() {
               Get Your Free Quote
             </h2>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-              Ready to start your heavy haul transportation project? Fill out the form below and we&apos;ll get back to you within 24 hours.
+              Ready to start your heavy haul and specialized transportation project? Fill out the form below and we&apos;ll get back to you within 24 hours with a customized transportation plan.
             </p>
           </motion.div>
 
@@ -777,7 +777,7 @@ export default function Gallery() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500/50 focus:border-transparent transition-all duration-300"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -794,7 +794,7 @@ export default function Gallery() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500/50 focus:border-transparent transition-all duration-300"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -811,7 +811,7 @@ export default function Gallery() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500/50 focus:border-transparent transition-all duration-300"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -827,7 +827,7 @@ export default function Gallery() {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500/50 focus:border-transparent transition-all duration-300"
                     placeholder="Enter your company name"
                   />
                 </div>
@@ -882,7 +882,7 @@ export default function Gallery() {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-gradient-to-r from-blue-600 to-slate-700 text-white px-12 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 border border-blue-400/30"
+                  className="bg-gradient-to-r from-gray-600 to-slate-700 text-white px-12 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-gray-500/25 transition-all duration-300 border border-gray-400/30"
                 >
                   Submit Quote Request
                 </motion.button>
@@ -892,17 +892,17 @@ export default function Gallery() {
               <div className="mt-8 pt-8 border-t border-slate-600/50">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                   <div>
-                    <div className="text-blue-400 font-bold text-lg mb-2">📞 Call Us</div>
-                    <div className="text-gray-300">(555) 123-4567</div>
+                    <div className="text-gray-400 font-bold text-lg mb-2">📞 Call Us</div>
+                    <div className="text-gray-300">(937) 528-9614</div>
                     <div className="text-gray-400 text-sm">24/7 Dispatch</div>
                   </div>
                   <div>
-                    <div className="text-blue-400 font-bold text-lg mb-2">📧 Email Us</div>
-                    <div className="text-gray-300">info@sevenlines.com</div>
+                    <div className="text-gray-400 font-bold text-lg mb-2">📧 Email Us</div>
+                    <div className="text-gray-300" >info@amextransports.com</div>
                     <div className="text-gray-400 text-sm">Quick Response</div>
                   </div>
                   <div>
-                    <div className="text-blue-400 font-bold text-lg mb-2">📍 Location</div>
+                    <div className="text-gray-400 font-bold text-lg mb-2">📍 Location</div>
                     <div className="text-gray-300">Nationwide Coverage</div>
                     <div className="text-gray-400 text-sm">All 50 States</div>
                   </div>

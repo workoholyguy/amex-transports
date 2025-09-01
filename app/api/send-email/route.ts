@@ -37,18 +37,18 @@ export async function POST(request: Request) {
       Submitted: ${new Date().toLocaleString()}
     `;
 
-    // Send mail to Seven Lines (avidtechusa@gmail.com)
+    // Send mail to Amex Transports (avidtechusa@gmail.com)
     const info = await transporter.sendMail({
-      from: `"Seven Lines Trucking" <${process.env.EMAIL_USER}>`,
-      to: 'avidtechusa@gmail.com',
-      cc: 'the7linesinc@gmail.com',
+      from: `"Amex Transports" <${process.env.EMAIL_USER}>`,
+      to: 'amextrucks@gmail.com',
+      cc: 'avidtechusa@gmail.com',
       subject: `New Contact Form Submission - ${formData.name}`,
       text: emailContent,
     });
 
     // Send confirmation copy to the sender
     const confirmationContent = `
-      Thank you for contacting Seven Lines Trucking!
+      Thank you for contacting Amex Transports!
       
       We have received your message and will get back to you soon.
       
@@ -65,17 +65,17 @@ export async function POST(request: Request) {
       Submitted: ${new Date().toLocaleString()}
       
       ---
-      Seven Lines Trucking
+      Amex Transports
       Specialized RGN Superload Transportation
       Phone: (937) 206-3308
-      Email: the7linesinc@gmail.com
-      Website: www.sevenlinestrucking.com
+      Email: amextrucks@gmail.com
+      Website: www.amextransports.com
     `;
 
     await transporter.sendMail({
-      from: `"Seven Lines Trucking" <${process.env.EMAIL_USER}>`,
+      from: `"Amex Transports" <${process.env.EMAIL_USER}>`,
       to: formData.email,
-      subject: `Thank you for contacting Seven Lines Trucking - ${formData.name}`,
+      subject: `Thank you for contacting Amex Transports - ${formData.name}`,
       text: confirmationContent,
     });
 

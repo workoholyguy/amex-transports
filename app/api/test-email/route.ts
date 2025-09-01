@@ -24,16 +24,17 @@ export async function GET() {
     const emailContent = `
       Test Email - Contact Form Setup:
       
-      This is a test email to verify that the Seven Lines Trucking contact form email system is working properly.
+      This is a test email to verify that the Amex Transports contact form email system is working properly.
       
       Test sent: ${new Date().toLocaleString()}
     `;
 
     // Send test email
     const info = await transporter.sendMail({
-      from: `"Seven Lines Trucking" <${process.env.EMAIL_USER}>`,
+      from: `"Amex Transports" <${process.env.EMAIL_USER}>`,
       to: 'avidtechusa@gmail.com',
-      subject: 'Test Email - Seven Lines Contact Form',
+      cc: 'amextrucks@gmail.com',
+      subject: 'Test Email - Amex Transports Contact Form',
       text: emailContent,
     });
 
@@ -42,7 +43,7 @@ export async function GET() {
 
     return NextResponse.json({ 
       success: true,
-      message: 'Test email sent successfully! Check avidtechusa@gmail.com',
+      message: 'Test email sent successfully! Check avidtechusa@gmail.com & amextrucks@gmail.com',
       messageId: info.messageId,
       previewUrl: nodemailer.getTestMessageUrl(info)
     });

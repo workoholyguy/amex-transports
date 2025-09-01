@@ -14,7 +14,7 @@ export default function Footer() {
               Amex Transport Inc
             </h3>
             <p className="text-slate-300 mb-4 text-sm leading-relaxed">
-              Leading heavy haul transportation specialists since 2003.
+              CAPABLE. Leading heavy haul and specialized load transportation specialists since 2003.
             </p>
             <div className="flex space-x-3">
               <a 

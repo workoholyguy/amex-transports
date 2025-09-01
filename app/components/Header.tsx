@@ -28,7 +28,7 @@ export default function Header() {
             <Link href="/" className="flex items-center h-full">
               <Image
                 src="/white_FullLogoamex.png"
-                alt="Seven Lines Logo"
+                alt="Amex Transports Logo"
                 width={120}
                 height={40}
                 className="h-20 w-auto max-h-full object-contain"

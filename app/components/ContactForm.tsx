@@ -65,15 +65,14 @@ export default function ContactForm() {
       icon: "📍",
       title: "Visit Us",
       details: [
-        { text: "3560 Valley St, Dayton, OH 45424", action: "map", url: "https://maps.google.com/?q=3560+Valley+St+Dayton+OH" },
+        { text: "1435 Webster St, Dayton, OH 45404", action: "map", url: "https://maps.google.com/?q=1435+Webster+St+Dayton+OH+45404" },
       ]
     },
     {
       icon: "📞",
       title: "Call Us",
       details: [
-        { text: "(937) 206-3308", action: "tel", url: "tel:9372063308" },
-        { text: "+1 (937) 367-0843", action: "tel", url: "tel:+19373670843" },
+        { text: "(937) 528-9614", action: "tel", url: "tel:9375289614" },
         { text: "24/7 Dispatch Available", action: "none" }
       ]
     },
@@ -81,9 +80,17 @@ export default function ContactForm() {
       icon: "✉️",
       title: "Email Us",
       details: [
-        { text: "the7linesinc@gmail.com", action: "email", url: "mailto:the7linesinc@gmail.com" },
+        { text: "amextrucks@gmail.com", action: "email", url: "mailto:amextrucks@gmail.com" },
         { text: "Dispatch Available", action: "none" },
         { text: "Quote Requests Welcome", action: "none" }
+      ]
+    },
+    {
+      icon: "📷",
+      title: "Follow Us",
+      details: [
+        { text: "@amex.transport", action: "social", url: "https://www.instagram.com/amex.transport" },
+        { text: "Latest Projects & Updates", action: "none" }
       ]
     }
   ];
@@ -111,11 +118,11 @@ export default function ContactForm() {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent">
                 Get In Touch
               </h2>
               <p className="text-lg text-gray-300 mb-6">
-                Ready to move your load? Contact us for a free quote and consultation.
+                Ready to move your heavy haul or specialized load? Contact us for a free quote and consultation with our experienced team.
               </p>
             </div>
             <div className="space-y-4">
@@ -126,7 +133,7 @@ export default function ContactForm() {
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: isMobile ? 0.2 : 0.6, delay: isMobile ? 0 : index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-3 bg-slate-800/30 backdrop-blur-sm rounded-xl p-4 border border-slate-600/30 hover:border-blue-500/50 transition-all duration-300"
+                  className="flex items-start space-x-3 bg-slate-800/30 backdrop-blur-sm rounded-xl p-4 border border-slate-600/30 hover:border-gray-500/50 transition-all duration-300"
                 >
                   <div className="text-2xl">{info.icon}</div>
                   <div>
@@ -139,13 +146,14 @@ export default function ContactForm() {
                           ) : (
                             <a
                               href={detail.url}
-                              target={detail.action === "map" ? "_blank" : "_self"}
-                              rel={detail.action === "map" ? "noopener noreferrer" : ""}
-                              className="text-blue-400 hover:text-blue-300 hover:underline transition-colors duration-200 cursor-pointer"
+                              target={detail.action === "map" || detail.action === "social" ? "_blank" : "_self"}
+                              rel={detail.action === "map" || detail.action === "social" ? "noopener noreferrer" : ""}
+                              className="text-gray-400 hover:text-gray-300 hover:underline transition-colors duration-200 cursor-pointer"
                               title={
                                 detail.action === "tel" ? "Click to call" :
                                 detail.action === "email" ? "Click to email" :
-                                detail.action === "map" ? "Click to open in maps" : ""
+                                detail.action === "map" ? "Click to open in maps" :
+                                detail.action === "social" ? "Click to visit Instagram" : ""
                               }
                             >
                               {detail.text}
@@ -166,7 +174,7 @@ export default function ContactForm() {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: isMobile ? 0.2 : 0.8 }}
             viewport={{ once: true }}
-            className="bg-slate-800/30 backdrop-blur-sm text-white rounded-xl p-6 border border-slate-600/30 shadow-2xl shadow-blue-500/25"
+            className="bg-slate-800/30 backdrop-blur-sm text-white rounded-xl p-6 border border-slate-600/30 shadow-2xl shadow-gray-500/25"
           >
             <h3 className="text-xl font-bold mb-4 text-white">Send Us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -182,7 +190,7 @@ export default function ContactForm() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500/50 text-white placeholder-gray-400 backdrop-blur-sm transition-all duration-300 text-sm"
+                    className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500/50 text-white placeholder-gray-400 backdrop-blur-sm transition-all duration-300 text-sm"
                     placeholder="Your full name"
                   />
                 </div>
@@ -197,7 +205,7 @@ export default function ContactForm() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500/50 text-white placeholder-gray-400 backdrop-blur-sm transition-all duration-300 text-sm"
+                    className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500/50 text-white placeholder-gray-400 backdrop-blur-sm transition-all duration-300 text-sm"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -214,8 +222,8 @@ export default function ContactForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500/50 text-white placeholder-gray-400 backdrop-blur-sm transition-all duration-300 text-sm"
-                    placeholder="(937) 555-0123"
+                    className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500/50 text-white placeholder-gray-400 backdrop-blur-sm transition-all duration-300 text-sm"
+                    placeholder="(937) 528-9614"
                   />
                 </div>
                 <div>
@@ -227,7 +235,7 @@ export default function ContactForm() {
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500/50 text-white backdrop-blur-sm transition-all duration-300 text-sm"
+                    className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500/50 text-white backdrop-blur-sm transition-all duration-300 text-sm"
                   >
                     <option value="">Select a service</option>
                     {serviceOptions.map((service, index) => (
@@ -241,16 +249,16 @@ export default function ContactForm() {
                 <label htmlFor="message" className="block text-xs font-medium text-gray-300 mb-1">
                   Message *
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={4}
-                  className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500/50 text-white placeholder-gray-400 backdrop-blur-sm transition-all duration-300 text-sm"
-                  placeholder="Tell us about your transportation needs..."
-                />
+                                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={4}
+                    className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500/50 text-white placeholder-gray-400 backdrop-blur-sm transition-all duration-300 text-sm"
+                    placeholder="Tell us about your heavy haul and specialized transportation needs..."
+                  />
               </div>
 
               <motion.button
@@ -258,7 +266,7 @@ export default function ContactForm() {
                 whileTap={isMobile ? {} : { scale: 0.98 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-slate-700 text-white py-2 px-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed border border-blue-400/30 text-sm"
+                className="w-full bg-gradient-to-r from-gray-600 to-slate-700 text-white py-2 px-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-gray-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed border border-gray-400/30 text-sm"
               >
                 {isSubmitting ? 'Sending Message...' : 'Send Message'}
               </motion.button>

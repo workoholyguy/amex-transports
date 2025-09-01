@@ -6,37 +6,37 @@ export default function Services() {
   const services = [
     {
       title: "RGN Superload Transport",
-      description: "Specialized transportation for oversized and overweight loads requiring removable gooseneck trailers. Perfect for construction equipment, industrial machinery, and large components.",
-      features: ["Up to 20,000 lbs capacity", "Nationwide coverage", "24/7 dispatch", "Permit coordination"],
+      description: "Specialized transportation for oversized and overweight loads requiring removable gooseneck trailers. Our experienced team develops customized transportation plans for each unique shipment.",
+      features: ["Up to 40,000 lbs capacity", "Customized transport plans", "24/7 dispatch", "Permit coordination"],
       image: "/gallery19.jpeg"
     },
     {
       title: "Heavy Equipment Hauling",
-      description: "Transport of construction equipment, excavators, bulldozers, cranes, and other heavy machinery across the United States.",
-      features: ["Equipment expertise", "Secure loading", "Insurance coverage", "Real-time tracking"],
+      description: "Expert transport of construction equipment, excavators, bulldozers, cranes, and other heavy machinery utilizing specialized equipment like lowboy trailers and flatbeds.",
+      features: ["Specialized equipment", "Secure loading", "Route planning", "Real-time updates"],
       image: "/gallery20.jpeg"
     },
     {
       title: "Industrial Machinery Transport",
-      description: "Specialized handling and transportation of industrial machinery, manufacturing equipment, and factory components.",
+      description: "Specialized handling and transportation of industrial machinery, manufacturing equipment, and factory components with expert rigging and precision loading.",
       features: ["Precision loading", "Climate control", "Damage protection", "Expert rigging"],
       image: "/gallery21.jpeg"
     },
     {
       title: "Airport & Aircraft Transport",
-      description: "Specialized transportation services for airport equipment, aircraft components, and aviation infrastructure to airports and maintenance facilities.",
-      features: ["Aircraft components", "Ground support equipment", "Aviation infrastructure", "Airport coordination"],
+      description: "Specialized transportation services for airport equipment, aircraft components, and aviation infrastructure with compliance expertise and regulatory knowledge.",
+      features: ["Aircraft components", "Ground support equipment", "Aviation infrastructure", "Regulatory compliance"],
       image: "gallery34.jpg"
     },
     {
       title: "Oil & Gas Equipment",
-      description: "Transportation of drilling rigs, pipeline equipment, and oil field machinery to remote locations.",
+      description: "Transportation of drilling rigs, pipeline equipment, and oil field machinery to remote locations with specialized equipment and safety protocols.",
       features: ["Remote access", "Rough terrain", "Emergency response", "Safety protocols"],
       image: "/gallery23.jpeg"
     },
     {
       title: "Military & Government",
-      description: "Secure transportation services for military equipment, government vehicles, and sensitive cargo requiring special handling.",
+      description: "Secure transportation services for military equipment, government vehicles, and sensitive cargo requiring special handling and compliance expertise.",
       features: ["Security clearance", "Escort services", "Documentation", "Compliance"],
       image: "/gallery33.jpg"
     }
@@ -67,7 +67,7 @@ export default function Services() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 lg:mb-10 leading-tight bg-gradient-to-r from-blue-400 via-slate-300 to-white bg-clip-text text-transparent"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 lg:mb-10 leading-tight bg-gradient-to-r from-gray-400 via-slate-300 to-white bg-clip-text text-transparent"
             >
               Our Services
             </motion.h1>
@@ -77,7 +77,7 @@ export default function Services() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-12 leading-relaxed"
             >
-              Specialized Transportation Solutions for Heavy & Oversized Loads
+              CAPABLE. Heavy Haul & Specialized Load Transportation with Precision and Care
             </motion.p>
             <motion.p 
               initial={{ y: 30, opacity: 0 }}
@@ -85,7 +85,7 @@ export default function Services() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-base sm:text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              RGN Superloads • Heavy Equipment • Industrial Machinery • Nationwide Coverage
+              Specialized Equipment • Expert Drivers • Customized Plans • Nationwide Coverage
             </motion.p>
           </div>
         </motion.div>
@@ -102,11 +102,11 @@ export default function Services() {
             viewport={{ once: true }}
             className="text-center mb-16 sm:mb-20 lg:mb-24"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
-              Comprehensive Transportation Solutions
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-gray-400 to-slate-300 bg-clip-text text-transparent">
+              Specialized Heavy Haul Transportation Solutions
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              From superloads to specialized equipment, we provide end-to-end transportation services with precision and care.
+              From superloads to specialized equipment, we provide end-to-end heavy haul transportation services with precision, care, and customized plans for each unique shipment.
             </p>
           </motion.div>
 
@@ -120,7 +120,7 @@ export default function Services() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
-                className="bg-slate-800/30 backdrop-blur-sm rounded-2xl shadow-2xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform overflow-hidden border border-slate-600/30 hover:border-blue-500/50"
+                className="bg-slate-800/30 backdrop-blur-sm rounded-2xl shadow-2xl shadow-gray-500/25 hover:shadow-2xl hover:shadow-gray-500/40 transition-all duration-300 transform overflow-hidden border border-slate-600/30 hover:border-gray-500/50"
               >
                 {/* Card Header with Image */}
                 <div className="h-56 relative overflow-hidden">
@@ -132,7 +132,7 @@ export default function Services() {
                   ></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   {/* Service Number Overlay */}
-                  <div className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-r from-blue-600 to-slate-700 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg border border-blue-400/30">
+                  <div className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-r from-gray-600 to-slate-700 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg border border-gray-400/30">
                     {index + 1}
                   </div>
                   {/* Service Icon */}
@@ -158,7 +158,7 @@ export default function Services() {
                   <ul className="space-y-3">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start text-sm sm:text-base text-gray-300">
-                        <svg className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         <span className="leading-relaxed">{feature}</span>
@@ -191,17 +191,17 @@ export default function Services() {
           viewport={{ once: true }}
           className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-10 lg:mb-12 leading-tight bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-10 lg:mb-12 leading-tight bg-gradient-to-r from-gray-400 to-slate-300 bg-clip-text text-transparent">
             Ready to Move Your Load?
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-12 sm:mb-16 max-w-4xl mx-auto leading-relaxed">
-            Get a free quote for your transportation needs. Our team of experts is ready to handle your heavy haul requirements with precision and care.
+            Get a free quote for your heavy haul and specialized transportation needs. Our experienced team is ready to handle your unique shipment requirements with precision, care, and customized transportation plans.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-slate-700 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200 transform shadow-lg shadow-blue-500/25 border border-blue-400/30"
+              className="bg-gradient-to-r from-gray-600 to-slate-700 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:shadow-lg hover:shadow-gray-500/25 transition-all duration-200 transform shadow-lg shadow-gray-500/25 border border-gray-400/30"
               onClick={() => {
                 document.getElementById('get-in-touch')?.scrollIntoView({ behavior: 'smooth' });
               }}
@@ -211,7 +211,7 @@ export default function Services() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-blue-400/50 text-blue-400 px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:bg-blue-400/10 backdrop-blur-sm transition-all duration-200 transform"
+              className="border-2 border-gray-400/50 text-gray-400 px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:bg-gray-400/10 backdrop-blur-sm transition-all duration-200 transform"
               onClick={() => {
                 document.getElementById('get-in-touch')?.scrollIntoView({ behavior: 'smooth' });
               }}

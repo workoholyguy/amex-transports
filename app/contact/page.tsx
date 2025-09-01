@@ -21,7 +21,7 @@ export default function ContactPage() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent"
+              className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-400 to-slate-300 bg-clip-text text-transparent"
             >
               Contact Us
             </motion.h1>
@@ -31,7 +31,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto"
             >
-              Get in touch with our team of heavy haul transportation experts. We&apos;re here to help with your specialized transport needs.
+              Get in touch with our experienced team of heavy haul and specialized transportation experts. We&apos;re here to help with your unique shipment requirements and customized transport plans.
             </motion.p>
           </div>
         </motion.div>
@@ -56,17 +56,17 @@ export default function ContactPage() {
           className="relative h-full flex items-center justify-center"
         >
           <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-10 lg:mb-12 leading-tight bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-10 lg:mb-12 leading-tight bg-gradient-to-r from-gray-400 to-slate-300 bg-clip-text text-transparent">
               Ready to Work With Us?
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-12 sm:mb-16 max-w-4xl mx-auto leading-relaxed">
-              Let&apos;s discuss your transportation needs and see how we can help move your cargo safely and efficiently across America.
+              Let&apos;s discuss your heavy haul and specialized transportation needs and see how we can help move your cargo safely and efficiently across America with our experienced team and specialized equipment.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center">
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-blue-600 to-slate-700 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200 transform shadow-lg shadow-blue-500/25 border border-blue-400/30" 
+                className="bg-gradient-to-r from-gray-600 to-slate-700 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:shadow-lg hover:shadow-gray-500/25 transition-all duration-200 transform shadow-lg shadow-gray-500/25 border border-gray-400/30" 
                 onClick={() => {
                   document.getElementById('get-in-touch')?.scrollIntoView({ behavior: 'smooth' });
                 }}
@@ -76,7 +76,7 @@ export default function ContactPage() {
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-blue-400/50 text-blue-400 px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:bg-blue-400/10 backdrop-blur-sm transition-all duration-200 transform" 
+                className="border-2 border-gray-400/50 text-gray-400 px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:bg-gray-400/10 backdrop-blur-sm transition-all duration-200 transform" 
                 onClick={() => {
                   document.getElementById('get-in-touch')?.scrollIntoView({ behavior: 'smooth' });
                 }}

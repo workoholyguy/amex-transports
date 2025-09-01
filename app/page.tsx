@@ -8,12 +8,17 @@ import NextImage from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useIsMobile, getAnimationVariants } from './hooks/useIsMobile';
+import { useNetworkQuality, shouldUseVideo } from './hooks/useNetworkQuality';
 
 export default function Home() {
   const isMobile = useIsMobile();
   const variants = getAnimationVariants(isMobile);
+  const networkQuality = useNetworkQuality();
+  const useVideoBackground = shouldUseVideo(networkQuality);
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [showDebugInfo, setShowDebugInfo] = useState(false);
+  const [videoLoadError, setVideoLoadError] = useState(false);
 
   // Create refs for each section
   const heroRef = useRef<HTMLElement>(null!);
@@ -76,27 +81,27 @@ export default function Home() {
   const services = [
     {
       title: "RGN Superload Transport",
-      description: "Specialized transportation for oversized and overweight loads requiring removable gooseneck trailers.",
+      description: "Specialized transportation for oversized and overweight loads requiring removable gooseneck trailers with precision handling.",
       icon: "🚛",
-      features: ["Up to 40,000 lbs capacity", "Nationwide coverage", "24/7 dispatch", "Permit coordination"]
+      features: ["Up to 40,000 lbs capacity", "Customized transport plans", "24/7 dispatch", "Permit coordination"]
     },
     {
       title: "Heavy Equipment Hauling",
-      description: "Transport of construction equipment, excavators, bulldozers, cranes, and other heavy machinery.",
+      description: "Expert transport of construction equipment, excavators, bulldozers, cranes, and other heavy machinery with specialized equipment.",
       icon: "🏗️",
-      features: ["Equipment expertise", "Secure loading", "Insurance coverage", "Real-time tracking"]
+      features: ["Lowboy trailers", "Secure loading", "Route planning", "Real-time updates"]
     },
     {
       title: "Industrial Machinery",
-      description: "Specialized handling and transportation of industrial machinery and manufacturing equipment.",
+      description: "Specialized handling and transportation of industrial machinery and manufacturing equipment with expert rigging.",
       icon: "⚙️",
       features: ["Precision loading", "Climate control", "Damage protection", "Expert rigging"]
     },
     {
       title: "Airport & Aircraft Transport",
-      description: "Specialized transportation services for airport equipment, aircraft components, and aviation infrastructure.",
+      description: "Specialized transportation services for airport equipment, aircraft components, and aviation infrastructure with compliance expertise.",
       icon: "✈️",
-      features: ["Aircraft components", "Ground support equipment", "Aviation infrastructure", "Airport coordination"]
+      features: ["Aircraft components", "Ground support equipment", "Aviation infrastructure", "Regulatory compliance"]
     }
   ];
 
@@ -160,10 +165,39 @@ export default function Home() {
         {/* Hero Section - Clipped from Bottom */}
         <section 
           ref={heroRef}
-          className="snap-section h-[85vh] md:h-[85vh] h-screen relative bg-gradient-to-r from-gray-950 via-slate-900 to-gray-950 text-white overflow-hidden pt-0"
+          className="snap-section h-screen relative bg-gradient-to-r from-gray-950 via-slate-900 to-gray-950 text-white overflow-hidden pt-0"
         >
-          {/* Background Image */}
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/gallery34.jpeg)' }}></div>
+          {/* Dynamic Background - Video or Image based on network quality */}
+          {useVideoBackground && !videoLoadError ? (
+            <>
+              <video
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                style={{ objectPosition: 'center center' }}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                onError={() => {
+                  console.log('Video failed to load, falling back to image');
+                  setVideoLoadError(true);
+                }}
+                onLoadStart={() => {
+                  console.log('Video loading started');
+                }}
+                onCanPlay={() => {
+                  console.log('Video can play');
+                }}
+              >
+                <source src="/gallery31.mov" type="video/quicktime" />
+                <source src="/gallery31.mp4" type="video/mp4" />
+              </video>
+              {/* Fallback image - hidden by default, shown if video fails */}
+              <div className="absolute inset-0 hero-bg-image hidden"></div>
+            </>
+          ) : (
+            <div className="absolute inset-0 hero-bg-image"></div>
+          )}
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-gray-950/80 via-slate-900/70 to-gray-950/80"></div>
           <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
@@ -176,24 +210,24 @@ export default function Home() {
               <motion.h1 
                 {...variants.slideUp}
                 transition={{ ...variants.slideUp.transition, delay: isMobile ? 0 : 0.2 }}
-                className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-slate-200 to-gray-100 bg-clip-text text-transparent"
+                className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-600 via-slate-200 to-gray-100 bg-clip-text text-transparent"
               >
                 AMEX TRANSPORTS
-                <span className="block text-red-500 text-4xl md:text-6xl mt-4 font-semibold">Reliable Trucking Company</span>
+                <span className="block text-gray-500 text-4xl md:text-6xl mt-4 font-semibold">CAPABLE.</span>
               </motion.h1>
               <motion.p 
                 {...variants.slideUp}
                 transition={{ ...variants.slideUp.transition, delay: isMobile ? 0 : 0.4 }}
-                className="text-xl md:text-3xl text-gray-200 max-w-4xl mx-auto mb-8"
+                className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto mb-8"
               >
-                Specialized RGN Superload Transportation Across America
+                Heavy Haul & Specialized Load Transportation with Precision and Care
               </motion.p>
               <motion.p 
                 {...variants.slideUp}
                 transition={{ ...variants.slideUp.transition, delay: isMobile ? 0 : 0.6 }}
                 className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
               >
-                Based in Dayton, Ohio • Nationwide Coverage • Heavy Haul Specialists
+                Based in Dayton, Ohio • Nationwide Coverage • Specialized Equipment & Expert Drivers
               </motion.p>
               <motion.div 
                 {...variants.slideUp}
@@ -202,7 +236,7 @@ export default function Home() {
               >
                 <motion.button 
                   {...variants.buttonScale}
-                  className="bg-gradient-to-r from-blue-700 to-slate-700 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 border border-blue-500/40 hover:from-blue-600 hover:to-slate-600" 
+                  className="bg-gradient-to-r from-gray-700 to-slate-700 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-gray-600/25 transition-all duration-300 border border-gray-500/40 hover:from-gray-600 hover:to-slate-600" 
                   onClick={() => {
                     document.getElementById('get-in-touch')?.scrollIntoView({ behavior: 'smooth' });
                   }}
@@ -244,6 +278,34 @@ export default function Home() {
           
           {/* Truck silhouette overlay */}
           <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-gray-950 to-transparent"></div>
+          
+          {/* Debug Info Toggle - Development Only */}
+          {process.env.NODE_ENV === 'development' && (
+            <button
+              onClick={() => setShowDebugInfo(!showDebugInfo)}
+              className="fixed top-4 right-4 z-50 bg-gray-800 text-white px-3 py-1 rounded text-xs opacity-50 hover:opacity-100"
+            >
+              Debug Network
+            </button>
+          )}
+          
+          {/* Debug Information - Development Only */}
+          {process.env.NODE_ENV === 'development' && showDebugInfo && (
+            <div className="fixed top-12 right-4 z-50 bg-gray-900 text-white p-4 rounded-lg text-xs max-w-xs">
+              <h3 className="font-bold mb-2">Network Quality Debug</h3>
+              <div className="space-y-1">
+                <div>Using Video: <span className={useVideoBackground && !videoLoadError ? 'text-green-400' : 'text-red-400'}>{useVideoBackground && !videoLoadError ? 'Yes' : 'No'}</span></div>
+                <div>Video Load Error: <span className={videoLoadError ? 'text-red-400' : 'text-green-400'}>{videoLoadError ? 'Yes' : 'No'}</span></div>
+                <div>Connection Type: {networkQuality.connectionType}</div>
+                <div>Effective Type: {networkQuality.effectiveType}</div>
+                <div>Downlink: {networkQuality.downlink} Mbps</div>
+                <div>RTT: {networkQuality.rtt} ms</div>
+                <div>Save Data: {networkQuality.saveData ? 'Yes' : 'No'}</div>
+                <div>Screen Size: {networkQuality.screenSize}</div>
+                <div>Good Connection: {networkQuality.isGoodConnection ? 'Yes' : 'No'}</div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* Services Section - Compact */}
@@ -258,11 +320,11 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-600 to-slate-200 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-gray-600 to-slate-200 bg-clip-text text-transparent">
                 Our Services
               </h2>
               <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive transportation solutions for heavy and oversized loads
+                Specialized heavy haul transportation with customized plans for unique shipments
               </p>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -274,7 +336,7 @@ export default function Home() {
                   transition={{ duration: isMobile ? 0.2 : 0.8, delay: isMobile ? 0 : index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={isMobile ? {} : { y: -8 }}
-                  className="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-2xl hover:shadow-blue-600/20 transition-all duration-300 border border-gray-600/40 hover:border-blue-500/50 hover:bg-gray-700/50"
+                  className="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-2xl hover:shadow-gray-600/20 transition-all duration-300 border border-gray-600/40 hover:border-gray-500/50 hover:bg-gray-700/50"
                 >
                   <div className="text-4xl mb-3">{service.icon}</div>
                   <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
@@ -282,7 +344,7 @@ export default function Home() {
                   <ul className="space-y-1 text-xs text-gray-300">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center justify-center">
-                        <svg className="w-3 h-3 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-3 h-3 text-gray-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         {feature}
@@ -308,11 +370,11 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-blue-600 to-slate-200 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-gray-600 to-slate-200 bg-clip-text text-transparent">
                 Recent Projects
               </h2>
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                Showcasing our expertise in heavy haul transportation
+                Showcasing our capability in handling heavy haul and specialized loads with precision
               </p>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -324,7 +386,7 @@ export default function Home() {
                   transition={{ duration: isMobile ? 0.2 : 0.8, delay: isMobile ? 0 : index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={isMobile ? {} : { y: -10 }}
-                  className="bg-gray-800/40 backdrop-blur-sm rounded-2xl shadow-2xl shadow-blue-600/20 overflow-hidden hover:shadow-2xl hover:shadow-blue-600/30 transition-all duration-300 border border-gray-600/40 hover:border-blue-500/50 hover:bg-gray-700/50"
+                  className="bg-gray-800/40 backdrop-blur-sm rounded-2xl shadow-2xl shadow-gray-600/20 overflow-hidden hover:shadow-2xl hover:shadow-gray-600/30 transition-all duration-300 border border-gray-600/40 hover:border-gray-500/50 hover:bg-gray-700/50"
                 >
                   <div className="h-48 relative overflow-hidden">
                     <NextImage
@@ -335,7 +397,7 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-900/30 to-transparent"></div>
                     <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-gray-900/80 backdrop-blur-sm text-blue-400 text-xs font-medium rounded-full border border-blue-500/50">
+                      <span className="px-3 py-1 bg-gray-900/80 backdrop-blur-sm text-gray-400 text-xs font-medium rounded-full border border-gray-500/50">
                         {project.category}
                       </span>
                     </div>
@@ -361,19 +423,19 @@ export default function Home() {
                               <h4 className="font-semibold text-white mb-2">Project Details</h4>
                               <div className="space-y-2 text-sm">
                                 <div>
-                                  <span className="font-medium text-red-500">Location:</span>
+                                  <span className="font-medium text-gray-500">Location:</span>
                                   <p className="text-gray-300">{project.details.location}</p>
                                 </div>
                                 <div>
-                                  <span className="font-medium text-red-500">Equipment:</span>
+                                  <span className="font-medium text-gray-500">Equipment:</span>
                                   <p className="text-gray-300">{project.details.equipment}</p>
                                 </div>
                                 <div>
-                                  <span className="font-medium text-red-500">Weight:</span>
+                                  <span className="font-medium text-gray-500">Weight:</span>
                                   <p className="text-gray-300">{project.details.weight}</p>
                                 </div>
                                 <div>
-                                  <span className="font-medium text-red-500">Timeline:</span>
+                                  <span className="font-medium text-gray-500">Timeline:</span>
                                   <p className="text-gray-300">{project.details.timeline}</p>
                                 </div>
                               </div>
@@ -387,7 +449,7 @@ export default function Home() {
                             <motion.button 
                               whileHover={isMobile ? {} : { scale: 1.05 }}
                               whileTap={isMobile ? {} : { scale: 0.95 }}
-                              className="w-full bg-gradient-to-r from-blue-700 to-slate-700 text-white py-2 px-4 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 border border-blue-500/40 hover:from-blue-600 hover:to-slate-600" 
+                              className="w-full bg-gradient-to-r from-gray-700 to-slate-700 text-white py-2 px-4 rounded-xl font-medium hover:shadow-lg hover:shadow-gray-600/25 transition-all duration-300 border border-gray-500/40 hover:from-gray-600 hover:to-slate-600" 
                             > 
                               Get Quote for Similar Project
                             </motion.button>
@@ -402,7 +464,7 @@ export default function Home() {
                       onClick={() => {
                         setExpandedProject(expandedProject === project.id ? null : project.id);
                       }}
-                      className="w-full bg-gradient-to-r from-blue-700 to-slate-700 text-white py-2 px-4 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 border border-blue-500/40 hover:from-blue-600 hover:to-slate-600"
+                      className="w-full bg-gradient-to-r from-gray-700 to-slate-700 text-white py-2 px-4 rounded-xl font-medium hover:shadow-lg hover:shadow-gray-600/25 transition-all duration-300 border border-gray-500/40 hover:from-gray-600 hover:to-slate-600"
                     >
                       {expandedProject === project.id ? 'Hide Details' : 'View Details'}
                     </motion.button>
