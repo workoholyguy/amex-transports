@@ -17,6 +17,9 @@ export default function Gallery() {
     projectType: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     // Simulate loading
@@ -290,11 +293,54 @@ export default function Gallery() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add API call here
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    try {
+      // Map form data to match API expectations
+      const apiData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.projectType,
+        message: `Company: ${formData.company || 'Not provided'}\n\nProject Type: ${formData.projectType}\n\nProject Details:\n${formData.message}`
+      };
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(apiData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          projectType: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+        setErrorMessage(result.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setErrorMessage('Network error. Please check your connection and try again.');
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isLoading) {
@@ -880,13 +926,52 @@ export default function Gallery() {
               <div className="text-center">
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="bg-gradient-to-r from-gray-600 to-slate-700 text-white px-12 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-gray-500/25 transition-all duration-300 border border-gray-400/30"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  className={`px-12 py-4 rounded-xl font-bold text-lg transition-all duration-300 border ${
+                    isSubmitting 
+                      ? 'bg-gray-500 text-gray-300 cursor-not-allowed border-gray-500/30' 
+                      : 'bg-gradient-to-r from-gray-600 to-slate-700 text-white hover:shadow-2xl hover:shadow-gray-500/25 border-gray-400/30'
+                  }`}
                 >
-                  Submit Quote Request
+                  {isSubmitting ? (
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 border-2 border-gray-300 border-t-transparent rounded-full animate-spin"></div>
+                      Sending...
+                    </div>
+                  ) : (
+                    'Submit Quote Request'
+                  )}
                 </motion.button>
               </div>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-6 p-4 bg-green-900/30 border border-green-500/50 rounded-xl text-center"
+                >
+                  <div className="text-green-400 font-bold text-lg mb-2">✅ Message Sent Successfully!</div>
+                  <div className="text-green-300">
+                    Thank you for your interest! We&apos;ll get back to you within 24 hours with a customized transportation plan.
+                  </div>
+                </motion.div>
+              )}
+
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-6 p-4 bg-red-900/30 border border-red-500/50 rounded-xl text-center"
+                >
+                  <div className="text-red-400 font-bold text-lg mb-2">❌ Error Sending Message</div>
+                  <div className="text-red-300">
+                    {errorMessage}
+                  </div>
+                </motion.div>
+              )}
 
               {/* Contact Info */}
               <div className="mt-8 pt-8 border-t border-slate-600/50">
