@@ -139,7 +139,7 @@ export default function Home() {
       title: "Industrial Machinery",
       category: "Industrial",
       description: "Large industrial machinery transport for manufacturing facility",
-      image: "/gallery14.jpg",
+      image: "/gallery35.jpeg",
       details: {
         location: "Manufacturing facility in Michigan",
         equipment: "Production line machinery, Industrial presses",

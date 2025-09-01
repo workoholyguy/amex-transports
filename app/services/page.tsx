@@ -26,7 +26,7 @@ export default function Services() {
       title: "Airport & Aircraft Transport",
       description: "Specialized transportation services for airport equipment, aircraft components, and aviation infrastructure with compliance expertise and regulatory knowledge.",
       features: ["Aircraft components", "Ground support equipment", "Aviation infrastructure", "Regulatory compliance"],
-      image: "gallery34.jpg"
+      image: "gallery1.jpg"
     },
     {
       title: "Oil & Gas Equipment",
@@ -38,7 +38,7 @@ export default function Services() {
       title: "Military & Government",
       description: "Secure transportation services for military equipment, government vehicles, and sensitive cargo requiring special handling and compliance expertise.",
       features: ["Security clearance", "Escort services", "Documentation", "Compliance"],
-      image: "/gallery33.jpg"
+      image: "/gallery33.jpeg"
     }
   ];
 
@@ -50,7 +50,7 @@ export default function Services() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/gallery1.jpg')",
+            backgroundImage: "url('/gallery34.jpeg')",
           }}
         ></div>
         <div className="absolute inset-0 bg-black/60"></div>
@@ -92,7 +92,7 @@ export default function Services() {
       </section>
 
       {/* Services Grid - Enhanced Layout */}
-      <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-slate-800 to-gray-900">
+      <section className="py-10 sm:py-12 lg:py-16 bg-gradient-to-b from-slate-800 to-gray-900">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           {/* Section Header */}
           <motion.div 

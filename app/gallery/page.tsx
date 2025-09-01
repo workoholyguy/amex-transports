@@ -30,7 +30,7 @@ export default function Gallery() {
       title: "Airport Equipment Transport",
       category: "aviation",
       description: "Transportation of airport equipment and aircraft components to maintenance facilities",
-      image: "/gallery34.jpg",
+      image: "/gallery29.jpeg",
       location: "Cleveland Hopkins International Airport",
       weight: "85,000 lbs",
       distance: "450 miles"
@@ -60,7 +60,7 @@ export default function Gallery() {
       title: "Oil Rig Components",
       category: "oil-gas",
       description: "Transportation of oil rig components to drilling site",
-      image: "/gallery24.jpeg",
+      image: "/gallery24.jpg",
       location: "North Dakota Oil Field",
       weight: "45,000 lbs",
       distance: "600 miles"
@@ -70,7 +70,7 @@ export default function Gallery() {
       title: "Bridge Components",
       category: "infrastructure",
       description: "Large bridge components transport for infrastructure project",
-      image: "/gallery32.jpg",
+      image: "/gallery21.jpeg",
       location: "Ohio Infrastructure Project",
       weight: "80,000 lbs",
       distance: "520 miles"
@@ -80,7 +80,7 @@ export default function Gallery() {
       title: "Mining Equipment",
       category: "mining",
       description: "Heavy mining equipment transport to remote mining site",
-      image: "/gallery7.jpg",
+      image: "/gallery26.jpeg",
       location: "Wyoming Mining Site",
       weight: "40,000 lbs",
       distance: "750 miles"
@@ -90,7 +90,7 @@ export default function Gallery() {
       title: "Aircraft Components",
       category: "aviation",
       description: "Transport of aircraft components and parts",
-      image: "/gallery26.jpeg",
+      image: "/gallery1.jpg",
       location: "Aircraft Manufacturing",
       weight: "75,000 lbs",
       distance: "290 miles"
@@ -100,7 +100,7 @@ export default function Gallery() {
       title: "Heavy Machinery Transport",
       category: "equipment",
       description: "Specialized transport of heavy machinery and industrial equipment",
-      image: "/gallery21.jpeg",
+      image: "/gallery5.jpg",
       location: "Texas Industrial Complex",
       weight: "34,000 lbs",
       distance: "380 miles"
@@ -120,7 +120,7 @@ export default function Gallery() {
       title: "Pipeline Equipment",
       category: "oil-gas",
       description: "Transport of pipeline construction equipment and materials",
-      image: "/gallery18.jpeg",
+      image: "/gallery23.jpeg",
       location: "Alaska Pipeline Project",
       weight: "30,000 lbs",
       distance: "680 miles"
@@ -140,7 +140,7 @@ export default function Gallery() {
       title: "Excavation Equipment",
       category: "mining",
       description: "Transport of large excavation and mining equipment",
-      image: "/gallery15.jpg",
+      image: "/gallery20.jpeg",
       location: "Mining Operation Site",
       weight: "39,000 lbs",
       distance: "720 miles"
@@ -160,7 +160,7 @@ export default function Gallery() {
       title: "Factory Equipment",
       category: "industrial",
       description: "Transport of factory equipment and production machinery",
-      image: "/gallery19.jpeg",
+      image: "/gallery2.jpeg",
       location: "Manufacturing Facility",
       weight: "30,000 lbs",
       distance: "290 miles"
@@ -170,7 +170,7 @@ export default function Gallery() {
       title: "Armored Vehicle Transport",
       category: "military",
       description: "Secure transport of armored vehicles and military equipment",
-      image: "/gallery33.jpg",
+      image: "/gallery33.jpeg",
       location: "Military Installation",
       weight: "35,000 lbs",
       distance: "460 miles"
@@ -180,7 +180,7 @@ export default function Gallery() {
       title: "Bridge Construction",
       category: "infrastructure",
       description: "Transport of bridge construction materials and equipment",
-      image: "/gallery22.jpeg",
+      image: "/gallery35.jpeg",
       location: "Bridge Construction Project",
       weight: "47,000 lbs",
       distance: "510 miles"
@@ -200,7 +200,7 @@ export default function Gallery() {
       title: "Industrial Components",
       category: "industrial",
       description: "Transport of industrial components and manufacturing equipment",
-      image: "/gallery27.jpeg",
+      image: "/gallery14.jpeg",
       location: "Industrial Complex",
       weight: "35,000 lbs",
       distance: "330 miles"
@@ -220,7 +220,7 @@ export default function Gallery() {
       title: "Construction Machinery",
       category: "equipment",
       description: "Transport of construction machinery and equipment",
-      image: "/gallery10.jpg",
+      image: "/gallery34.jpeg",
       location: "Construction Site",
       weight: "45,000 lbs",
       distance: "420 miles"
@@ -320,7 +320,7 @@ export default function Gallery() {
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-center">
           <Image 
-            src="/gallery1.jpg"
+            src="/gallery24.jpg"
             alt="Gallery Background"
             fill
             className="object-cover"

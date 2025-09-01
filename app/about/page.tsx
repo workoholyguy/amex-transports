@@ -43,7 +43,7 @@ export default function About() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/gallery2.jpg')",
+            backgroundImage: "url('/gallery4.jpg')",
           }}
         ></div>
         <div className="absolute inset-0 bg-black/60"></div>
