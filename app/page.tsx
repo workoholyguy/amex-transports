@@ -111,7 +111,7 @@ export default function Home() {
       title: "Airport Equipment Transport",
       category: "Aviation",
       description: "Specialized transportation of airport equipment and aviation machinery",
-      image: "/gallery2.jpg",
+      image: "/gallery1.jpg",
       details: {
         location: "Cleveland Hopkins International Airport",
         equipment: "Baggage handling systems, Ground support equipment",
@@ -125,7 +125,7 @@ export default function Home() {
       title: "Construction Equipment",
       category: "Heavy Equipment",
       description: "Heavy construction equipment transport including excavators and bulldozers",
-      image: "/gallery6.jpg",
+      image: "/gallery17.jpeg",
       details: {
         location: "Multiple construction sites across Ohio",
         equipment: "Excavators, Bulldozers, Cranes, Loaders",
