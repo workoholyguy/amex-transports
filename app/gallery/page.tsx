@@ -40,7 +40,7 @@ export default function Gallery() {
       title: "Construction Equipment Haul",
       category: "equipment",
       description: "Heavy construction equipment transport including excavators and bulldozers",
-      image: "/gallery6.jpg",
+      image: "/gallery7.jpeg",
       location: "Colorado Construction Site",
       weight: "120,000 lbs",
       distance: "320 miles"
@@ -50,7 +50,7 @@ export default function Gallery() {
       title: "Industrial Machinery",
       category: "industrial",
       description: "Large industrial machinery transport for manufacturing facility",
-      image: "/gallery29.jpeg",
+      image: "/gallery17.jpeg",
       location: "Michigan Factory",
       weight: "95,000 lbs",
       distance: "280 miles"
@@ -130,7 +130,7 @@ export default function Gallery() {
       title: "Highway Infrastructure",
       category: "infrastructure",
       description: "Transport of highway construction equipment and materials",
-      image: "/gallery14.jpg",
+      image: "/gallery30.jpeg",
       location: "Interstate Highway Project",
       weight: "37,000 lbs",
       distance: "480 miles"
