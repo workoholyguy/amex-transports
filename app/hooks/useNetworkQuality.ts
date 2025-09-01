@@ -66,8 +66,8 @@ export function useNetworkQuality(): NetworkQuality {
       // Determine if connection is good based on multiple factors
       const isGoodConnection = 
         connection.effectiveType === '4g' && 
-        connection.downlink >= 1.5 && 
-        connection.rtt <= 200 &&
+        (connection.downlink ?? 0) >= 1.5 && 
+        (connection.rtt ?? 0) <= 200 &&
         !connection.saveData;
 
       return {
@@ -96,7 +96,7 @@ export function useNetworkQuality(): NetworkQuality {
                       (navigator as Navigator & { mozConnection?: NetworkInformation }).mozConnection || 
                       (navigator as Navigator & { webkitConnection?: NetworkInformation }).webkitConnection;
 
-    if (connection) {
+    if (connection && connection.addEventListener) {
       connection.addEventListener('change', updateNetworkInfo);
     }
 
@@ -108,7 +108,7 @@ export function useNetworkQuality(): NetworkQuality {
 
     // Cleanup
     return () => {
-      if (connection) {
+      if (connection && connection.removeEventListener) {
         connection.removeEventListener('change', updateNetworkInfo);
       }
       window.removeEventListener('resize', updateNetworkInfo);
