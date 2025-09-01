@@ -2,11 +2,10 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useIsMobile, getAnimationVariants } from '../hooks/useIsMobile';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export default function ContactForm() {
   const isMobile = useIsMobile();
-  const variants = getAnimationVariants(isMobile);
   const [formData, setFormData] = useState({
     name: '',
     email: '',

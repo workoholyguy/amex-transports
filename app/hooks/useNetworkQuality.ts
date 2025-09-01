@@ -2,6 +2,16 @@
 
 import { useState, useEffect } from 'react';
 
+interface NetworkInformation {
+  type?: string;
+  effectiveType?: string;
+  downlink?: number;
+  rtt?: number;
+  saveData?: boolean;
+  addEventListener?: (event: string, listener: () => void) => void;
+  removeEventListener?: (event: string, listener: () => void) => void;
+}
+
 interface NetworkQuality {
   isGoodConnection: boolean;
   connectionType: string;
@@ -37,9 +47,9 @@ export function useNetworkQuality(): NetworkQuality {
 
     // Get network information
     const getNetworkInfo = () => {
-      const connection = (navigator as any).connection || 
-                        (navigator as any).mozConnection || 
-                        (navigator as any).webkitConnection;
+      const connection = (navigator as Navigator & { connection?: NetworkInformation }).connection || 
+                        (navigator as Navigator & { mozConnection?: NetworkInformation }).mozConnection || 
+                        (navigator as Navigator & { webkitConnection?: NetworkInformation }).webkitConnection;
 
       if (!connection) {
         // Fallback: assume good connection if no connection API
@@ -82,9 +92,9 @@ export function useNetworkQuality(): NetworkQuality {
     };
 
     // Listen for network changes
-    const connection = (navigator as any).connection || 
-                      (navigator as any).mozConnection || 
-                      (navigator as any).webkitConnection;
+    const connection = (navigator as Navigator & { connection?: NetworkInformation }).connection || 
+                      (navigator as Navigator & { mozConnection?: NetworkInformation }).mozConnection || 
+                      (navigator as Navigator & { webkitConnection?: NetworkInformation }).webkitConnection;
 
     if (connection) {
       connection.addEventListener('change', updateNetworkInfo);

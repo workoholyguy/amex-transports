@@ -4,12 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useIsMobile, getAnimationVariants } from '../hooks/useIsMobile';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
-  const variants = getAnimationVariants(isMobile);
 
   const navItems = [
     { name: 'Home', href: '/' },
